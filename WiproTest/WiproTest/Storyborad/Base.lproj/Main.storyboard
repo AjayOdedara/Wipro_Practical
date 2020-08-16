@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FQp-7i-1gL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xa9-tQ-YPG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FQp-7i-1gL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ay-VH-8iR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dNo-8k-oz8" kind="relationship" relationship="rootViewController" id="3eT-dE-w4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n17-uh-v5O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="1XH-n5-NKl">
+            <objects>
+                <collectionViewController id="dNo-8k-oz8" customClass="HomeViewController" customModule="WiproTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NY0-Oi-46x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fmt-V0-wlj">
+                            <size key="itemSize" width="164" height="228"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="NKX-Uv-yDF" customClass="ImageCollectionViewCell" customModule="WiproTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="164" height="228"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="QGB-QS-vcC" customClass="CacheMemoryImageView" customModule="WiproTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
+                                            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="QGB-QS-vcC" secondAttribute="height" multiplier="1:1" id="VW4-Ln-7iz"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-EU-Xmd">
+                                            <rect key="frame" x="5" y="200.5" width="154" height="24.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-SY-dsa">
+                                            <rect key="frame" x="5" y="172" width="154" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="QGB-QS-vcC" firstAttribute="leading" secondItem="NKX-Uv-yDF" secondAttribute="leading" id="4ea-ja-07Z"/>
+                                    <constraint firstItem="RVU-SY-dsa" firstAttribute="leading" secondItem="NKX-Uv-yDF" secondAttribute="leading" constant="5" id="CCX-DB-C1s"/>
+                                    <constraint firstItem="dqG-EU-Xmd" firstAttribute="leading" secondItem="NKX-Uv-yDF" secondAttribute="leading" constant="5" id="Gan-gv-Hjp"/>
+                                    <constraint firstItem="dqG-EU-Xmd" firstAttribute="top" secondItem="RVU-SY-dsa" secondAttribute="bottom" constant="5" id="WZO-k1-MKl"/>
+                                    <constraint firstAttribute="trailing" secondItem="QGB-QS-vcC" secondAttribute="trailing" id="bGt-Ts-Z7q"/>
+                                    <constraint firstItem="RVU-SY-dsa" firstAttribute="top" secondItem="QGB-QS-vcC" secondAttribute="bottom" constant="8" id="h8B-VW-hk1"/>
+                                    <constraint firstAttribute="bottom" secondItem="dqG-EU-Xmd" secondAttribute="bottom" constant="3" id="j73-dd-6od"/>
+                                    <constraint firstItem="QGB-QS-vcC" firstAttribute="top" secondItem="NKX-Uv-yDF" secondAttribute="top" id="t1r-ja-FQm"/>
+                                    <constraint firstAttribute="trailing" secondItem="RVU-SY-dsa" secondAttribute="trailing" constant="5" id="wlh-XI-lre"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqG-EU-Xmd" secondAttribute="trailing" constant="5" id="zOx-7x-7iY"/>
+                                </constraints>
+                                <size key="customSize" width="164" height="228"/>
+                                <connections>
+                                    <outlet property="albumTitle" destination="RVU-SY-dsa" id="Cm3-06-MP5"/>
+                                    <outlet property="artistName" destination="dqG-EU-Xmd" id="YZ2-Xx-ho3"/>
+                                    <outlet property="imageView" destination="QGB-QS-vcC" id="Afm-KE-zmx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomFooterView" id="IVn-xE-sHz" customClass="CustomFooterView" customModule="WiproTest" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="228" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H7L-xm-dLU">
+                                    <rect key="frame" x="188.5" y="6.5" width="37" height="37"/>
+                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="H7L-xm-dLU" firstAttribute="centerX" secondItem="IVn-xE-sHz" secondAttribute="centerX" id="XAf-0n-aD2"/>
+                                <constraint firstItem="H7L-xm-dLU" firstAttribute="centerY" secondItem="IVn-xE-sHz" secondAttribute="centerY" id="lwM-N8-bHb"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="loader" destination="H7L-xm-dLU" id="T3j-pu-jlZ"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="dNo-8k-oz8" id="xUZ-QG-7gd"/>
+                            <outlet property="delegate" destination="dNo-8k-oz8" id="31p-hn-GDh"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="hxg-mC-I4N"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ti3-Ji-d8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795.6521739130435" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="286" height="176"/>
+    </resources>
+</document>
