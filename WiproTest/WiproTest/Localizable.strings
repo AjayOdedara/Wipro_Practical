@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  WiproTest
+  
+  Created by Ajay Odedra on 16/08/20.
+  Copyright © 2020 Ajay Odedra. All rights reserved.
+*/
+
+// MARK: - Album Search
+
+// Album Search Alert
+"album_search_api_failure" = "Loading failed, check network connection";
+"album_search_url_failure" = "Failed to load url for search query";
+
+//Alert Title
+"album_search_alert_error_title" = "Error";
+"album_search_alert_okay_title" = "Ok";
+
+//Album Search Bar
+"album_search_bar_placeholder" = "Search";
+"album_search_navigation_bar_title" = "Album Search";

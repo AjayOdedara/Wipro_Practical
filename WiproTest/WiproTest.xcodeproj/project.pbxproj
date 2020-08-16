@@ -15,6 +15,7 @@
 		9A52B72424E9B48400286168 /* HomeViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52B72324E9B48400286168 /* HomeViewController+CollectionView.swift */; };
 		9A52B72624E9B4AC00286168 /* HomeViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52B72524E9B4AC00286168 /* HomeViewController+SearchBar.swift */; };
 		9A52B72824E9B89A00286168 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52B72724E9B89A00286168 /* AlbumDetailViewModel.swift */; };
+		9A52B72C24E9BD3700286168 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A52B72B24E9BD3700286168 /* Localizable.strings */; };
 		9A6B47D024E80F41008FF12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47CF24E80F41008FF12A /* AppDelegate.swift */; };
 		9A6B47D224E80F41008FF12A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47D124E80F41008FF12A /* SceneDelegate.swift */; };
 		9A6B47D424E80F41008FF12A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47D324E80F41008FF12A /* HomeViewController.swift */; };
@@ -61,6 +62,7 @@
 		9A52B72324E9B48400286168 /* HomeViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		9A52B72524E9B4AC00286168 /* HomeViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		9A52B72724E9B89A00286168 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
+		9A52B72B24E9BD3700286168 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9A6B47CC24E80F41008FF12A /* WiproTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6B47CF24E80F41008FF12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6B47D124E80F41008FF12A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				9A6B480824E81047008FF12A /* Storyborad */,
 				9A6B47D824E80F4A008FF12A /* Assets.xcassets */,
 				9A6B47DD24E80F4A008FF12A /* Info.plist */,
+				9A52B72B24E9BD3700286168 /* Localizable.strings */,
 			);
 			path = WiproTest;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6B47DC24E80F4A008FF12A /* LaunchScreen.storyboard in Resources */,
+				9A52B72C24E9BD3700286168 /* Localizable.strings in Resources */,
 				9A6B47D924E80F4A008FF12A /* Assets.xcassets in Resources */,
 				9A6B47D724E80F41008FF12A /* Main.storyboard in Resources */,
 			);

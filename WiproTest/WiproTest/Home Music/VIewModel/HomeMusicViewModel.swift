@@ -12,8 +12,8 @@ import UIKit
 class HomeMusicViewModel {
     
     // MARK: - Static Properties
-    let searchBarPlaceHolder = "Search"
-    let navTitle = "Album Search"
+    let searchBarPlaceHolder = NSLocalizedString("album_search_bar_placeholder", comment: "Search bar place holder")
+    let navTitle = NSLocalizedString("album_search_navigation_bar_title", comment: "Album search navigation large title")
     
     let reuseIdentifier = "ImageCollectionViewCell"
     let footerIdentifier = "CustomFooterView"
@@ -44,32 +44,26 @@ class HomeMusicViewModel {
         
         
         currentPage = currentPage + 1 //let currentPage = searchResultData.value.count/viewModel.itemsPerPage
+        
         self.searchText =  searchText.isEmpty ? self.searchText : searchText
         showLoadingHud.value = true
         
-        guard let apiUrl = getFormattedURl() else {
-            
-            let alert = SingleButtonAlert(title: "Error",
-                                          message: "Failed to load url for search query:\(searchText)",
-                                          action: AlertAction(buttonTitle: "Ok", handler: {
-                print("Alert action clicked")
-            }))
-            currentPage = currentPage - 1
-            self.onShowError?(alert)
-            return
-        }
         
         //API Call
-        appServerClient.api(url: apiUrl ,
+        appServerClient.api(url: getFormattedURl() ,
                             success: { (response) in
             self.showLoadingHud.value = false
             self.searchResultData.value.append(contentsOf: response)
                                 
         }) { ( error) in
             
-            let alert = SingleButtonAlert(title: "Error",
-                                          message: error?.localizedDescription ??  "Loading failed, check network connection",
-                                          action: AlertAction(buttonTitle: "Ok", handler: {
+            let defaultMessgae = NSLocalizedString("album_search_api_failure", comment: "Default api failure message")
+            let alertTitle = NSLocalizedString("album_search_alert_error_title", comment: "Alert title for failure")
+            let alertOkayButtonTitle = NSLocalizedString("album_search_alert_okay_title", comment: "Alert okay button title for failure")
+            
+            let alert = SingleButtonAlert(title: alertTitle,
+                                          message: error?.localizedDescription ??  defaultMessgae,
+                                          action: AlertAction(buttonTitle: alertOkayButtonTitle, handler: {
                 print("Alert action clicked")
             }))
             
@@ -81,7 +75,7 @@ class HomeMusicViewModel {
     /**
       Use fo encode the url  and return to use for Api call
     */
-    func getFormattedURl() -> String? {
+    func getFormattedURl() -> String {
         let escapedString = self.searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let url = APIConstants.webService.album + "\(escapedString)" + APIConstants.API_Keys.lastFM_ApiKey + "&page=\(currentPage)" + "&limit=\(itemsPerPage)"
         return url

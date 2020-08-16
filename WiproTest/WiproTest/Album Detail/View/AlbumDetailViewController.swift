@@ -1,9 +1,9 @@
 //
 //  PhotoDetailViewController.swift
-//  Mindera Test
+//  WiproTest
 //
-//  Created by Ajay Odedra on 11/06/19.
-//  Copyright © 2019 Ajay Odedra. All rights reserved.
+//  Created by Ajay Odedra on 16/08/20.
+//  Copyright © 2020 Ajay Odedra. All rights reserved.
 //
 
 import UIKit
