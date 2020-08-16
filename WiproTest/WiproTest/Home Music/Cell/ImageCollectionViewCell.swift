@@ -11,24 +11,22 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var imageView: CacheMemoryImageView!
     @IBOutlet weak var albumTitle: UILabel!
-    @IBOutlet weak var artistName: UILabel!
     
     var photo: Album? = nil
     
     func initWith(_ data: Album?){
         photo = data
-        guard let photo = photo, let thumbnailURL = URL(string: photo.image.last?.text ?? "") else {
+        guard let photo = photo,
+            let photoUrlString = photo.image.filter({$0.size == .large}).first?.text ,
+            let thumbnailURL = URL(string:  photoUrlString) else {
             return
         }
         self.albumTitle.text = data?.name
-        self.artistName.text = "By: " + ( data?.artist ?? "Unknown" )
-        print(thumbnailURL)
         self.imageView.loadImage(atURL: thumbnailURL)
     }
     
     override func prepareForReuse() {
         self.albumTitle.text = ""
-        self.artistName.text = ""
         self.imageView.image = nil
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A52B71224E8D3D200286168 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52B71124E8D3D200286168 /* AlbumDetailViewController.swift */; };
 		9A6B47D024E80F41008FF12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47CF24E80F41008FF12A /* AppDelegate.swift */; };
 		9A6B47D224E80F41008FF12A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47D124E80F41008FF12A /* SceneDelegate.swift */; };
 		9A6B47D424E80F41008FF12A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B47D324E80F41008FF12A /* HomeViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A52B71124E8D3D200286168 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		9A6B47CC24E80F41008FF12A /* WiproTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6B47CF24E80F41008FF12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6B47D124E80F41008FF12A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A52B71324E8D3E100286168 /* Album Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9A52B71124E8D3D200286168 /* AlbumDetailViewController.swift */,
+			);
+			path = "Album Detail";
+			sourceTree = "<group>";
+		};
 		9A6B47C324E80F41008FF12A = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 				9A6B481E24E89FC3008FF12A /* Utils */,
 				9A6B47FF24E80FDD008FF12A /* Helper */,
 				9A6B480724E81021008FF12A /* Home Music */,
+				9A52B71324E8D3E100286168 /* Album Detail */,
 				9A6B480824E81047008FF12A /* Storyborad */,
 				9A6B47D824E80F4A008FF12A /* Assets.xcassets */,
 				9A6B47DD24E80F4A008FF12A /* Info.plist */,
@@ -375,6 +386,7 @@
 				9A6B47D424E80F41008FF12A /* HomeViewController.swift in Sources */,
 				9A6B481524E85066008FF12A /* ImageCollectionViewCell.swift in Sources */,
 				9A6B481924E85255008FF12A /* CustomFooterViewCell.swift in Sources */,
+				9A52B71224E8D3D200286168 /* AlbumDetailViewController.swift in Sources */,
 				9A6B480424E80FDD008FF12A /* Result.swift in Sources */,
 				9A6B481324E82228008FF12A /* HomeMusicViewModel.swift in Sources */,
 				9A6B481B24E854BA008FF12A /* CachedMemoryManager.swift in Sources */,
