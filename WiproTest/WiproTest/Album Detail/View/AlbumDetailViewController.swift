@@ -40,6 +40,7 @@ class AlbumDetailViewController: UIViewController {
         }
         
         self.activityIndicator.startAnimating()
+        imageView.alpha = 0
         
         // Load ImageView HighResolution Image
         if CachedMemoryManager.shared.isImageCached(for: highResPhotoURL.absoluteString){
@@ -53,6 +54,11 @@ class AlbumDetailViewController: UIViewController {
             imageView.loadImage(atURL: highResPhotoURL, placeHolder: false, completion: {[weak self] in
                 DispatchQueue.main.async {
                     self?.activityIndicator.stopAnimating()
+                    
+                    UIView.animate(withDuration: 0.5) {
+                        self?.imageView.alpha = 1
+                        self?.view.layoutIfNeeded()
+                    }
                 }
             })
         }
@@ -71,9 +77,17 @@ class AlbumDetailViewController: UIViewController {
             }
         }
     }
+    deinit {
+        viewModel = nil
+        albumTitle = nil
+        artistName = nil
+        imageView.image = nil
+    }
     
     @IBAction func closePresentAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }
