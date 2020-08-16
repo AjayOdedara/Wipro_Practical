@@ -8,9 +8,10 @@
 
 import UIKit
 
-class AlbumDetailViewController: UIViewController{
     
-    var photo: Album? = nil
+    
+class AlbumDetailViewController: UIViewController {
+    
     
     @IBOutlet weak var imageView: CacheMemoryImageView!
     @IBOutlet weak var albumTitle: UILabel!
@@ -18,26 +19,34 @@ class AlbumDetailViewController: UIViewController{
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var viewModel: AlbumDetailViewModel? = nil
     
     override func viewDidLoad() {
         self.navigationItem.largeTitleDisplayMode = .never
         
         loadData()
     }
-    func loadData(){
+    
+    /**
+      Use to set data of the Album.
+      It will set the image, artist and album values.
+    */
+    func loadData() {
         
-        guard let photo = photo,
+        guard let photo = viewModel?.album,
             let photoUrlString = photo.image.filter({$0.size == .extralarge}).first?.text ,
             let highResPhotoURL = URL(string:  photoUrlString) else {
                 return
         }
-        
         
         self.activityIndicator.startAnimating()
         
         // Load ImageView HighResolution Image
         if CachedMemoryManager.shared.isImageCached(for: highResPhotoURL.absoluteString){
             imageView.loadImage(atURL: highResPhotoURL)
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
         } else{
             imageView.loadImage(atURL: highResPhotoURL)
             activityIndicator.startAnimating()
@@ -51,6 +60,16 @@ class AlbumDetailViewController: UIViewController{
         
         self.albumTitle.text = photo.name
         self.artistName.text = "By: " + photo.artist
+    }
+    
+    // MARK: - Binding
+    private func bindViewModel() {
+        
+        viewModel?.loadWithData.bindAndFire() { [weak self] isLoaded in
+            if isLoaded{
+                self?.loadData()
+            }
+        }
     }
     
     @IBAction func closePresentAction(_ sender: Any) {

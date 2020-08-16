@@ -15,7 +15,13 @@ class CacheMemoryImageView: UIImageView {
     // API INIT
     let appServerClient = AppServerClient.sharedInstance
     
+    /**
+      Load with url and set the image to imageView.
+      if place holder true it will show place holder untill image loading
     
+      - Parameter atURL: Url of the Image
+      - Parameter placeHolder: blank place holder image till image loading
+    */
     func loadImage(atURL url: URL, placeHolder: Bool = true, completion: (()-> Void)? = nil){
         
         self.urlKey = url.absoluteString

@@ -14,6 +14,12 @@ class ImageCollectionViewCell: UICollectionViewCell{
     
     var photo: Album? = nil
     
+    /**
+       Use to present the data of cell with Album object type.
+     
+       - Parameter data: Album data
+     */
+       
     func initWith(_ data: Album?){
         photo = data
         guard let photo = photo,
@@ -30,6 +36,9 @@ class ImageCollectionViewCell: UICollectionViewCell{
         self.imageView.image = nil
     }
     
+    /**
+     Reduce the priority of the cell image which is not visible
+    */
     func reducePriorityOfDownloadtaskForCell(){
         guard let photo = photo,  let thumbnailURL = URL(string: photo.image.first?.text ?? "") else {
             return

@@ -127,7 +127,8 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZTD-3j-FPg">
-                                <rect key="frame" x="188.5" y="402.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="152" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-i6-skY">
                                 <rect key="frame" x="177" y="728" width="60" height="60"/>
@@ -137,13 +138,13 @@
                                     <action selector="closePresentAction:" destination="hvx-ud-C1Y" eventType="touchUpInside" id="DxY-zU-sRH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-Dx-MCg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-Dx-MCg">
                                 <rect key="frame" x="20" y="349" width="374" height="41"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-CZ-ghu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-CZ-ghu">
                                 <rect key="frame" x="20" y="398" width="374" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,8 +153,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZTD-3j-FPg" firstAttribute="centerY" secondItem="J1n-jq-qgl" secondAttribute="centerY" id="75r-0o-Gqf"/>
                             <constraint firstItem="16Q-i6-skY" firstAttribute="centerX" secondItem="J1n-jq-qgl" secondAttribute="centerX" id="GEv-Lb-Ogn"/>
+                            <constraint firstItem="ZTD-3j-FPg" firstAttribute="centerY" secondItem="g1E-or-8iI" secondAttribute="centerY" id="IaK-dz-fA7"/>
                             <constraint firstItem="nKK-Dx-MCg" firstAttribute="leading" secondItem="pDB-rg-mtB" secondAttribute="leading" constant="20" id="Jba-Au-SkC"/>
                             <constraint firstItem="ZTD-3j-FPg" firstAttribute="centerX" secondItem="J1n-jq-qgl" secondAttribute="centerX" id="NMZ-BO-GG3"/>
                             <constraint firstItem="PRv-CZ-ghu" firstAttribute="leading" secondItem="nKK-Dx-MCg" secondAttribute="leading" id="QOy-lZ-LxI"/>
