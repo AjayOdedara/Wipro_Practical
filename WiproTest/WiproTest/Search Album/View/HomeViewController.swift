@@ -37,7 +37,6 @@ class HomeViewController: UICollectionViewController {
         self.definesPresentationContext = true
         self.navigationItem.searchController = searchController
         self.navigationItem.hidesSearchBarWhenScrolling = true
-        self.navigationItem.titleView?.tintColor = .gray
     }
     private func updateCollectionView() {
       DispatchQueue.main.async {
