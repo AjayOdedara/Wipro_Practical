@@ -34,6 +34,7 @@
 		9A6B481924E85255008FF12A /* CustomFooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B481824E85255008FF12A /* CustomFooterViewCell.swift */; };
 		9A6B481B24E854BA008FF12A /* CachedMemoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B481A24E854BA008FF12A /* CachedMemoryManager.swift */; };
 		9A6B481D24E88B35008FF12A /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6B481C24E88B35008FF12A /* APIConstant.swift */; };
+		9A991DB624F1DDB90026B083 /* SearchAlbumConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A991DB524F1DDB90026B083 /* SearchAlbumConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,7 @@
 		9A52B72524E9B4AC00286168 /* HomeViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		9A52B72724E9B89A00286168 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		9A52B72B24E9BD3700286168 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		9A6B47CC24E80F41008FF12A /* WiproTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6B47CC24E80F41008FF12A /* Album Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6B47CF24E80F41008FF12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6B47D124E80F41008FF12A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A6B47D324E80F41008FF12A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		9A6B481824E85255008FF12A /* CustomFooterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFooterViewCell.swift; sourceTree = "<group>"; };
 		9A6B481A24E854BA008FF12A /* CachedMemoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedMemoryManager.swift; sourceTree = "<group>"; };
 		9A6B481C24E88B35008FF12A /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		9A991DB524F1DDB90026B083 /* SearchAlbumConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +179,7 @@
 		9A6B47CD24E80F41008FF12A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A6B47CC24E80F41008FF12A /* WiproTest.app */,
+				9A6B47CC24E80F41008FF12A /* Album Search.app */,
 				9A6B47E224E80F4B008FF12A /* WiproTestTests.xctest */,
 				9A6B47ED24E80F4B008FF12A /* WiproTestUITests.xctest */,
 			);
@@ -191,7 +193,7 @@
 				9A6B480D24E814CD008FF12A /* API */,
 				9A6B481E24E89FC3008FF12A /* Utils */,
 				9A6B47FF24E80FDD008FF12A /* Helper */,
-				9A6B480724E81021008FF12A /* Home Music */,
+				9A6B480724E81021008FF12A /* Search Album */,
 				9A52B71324E8D3E100286168 /* Album Detail */,
 				9A6B480824E81047008FF12A /* Storyborad */,
 				9A6B47D824E80F4A008FF12A /* Assets.xcassets */,
@@ -240,15 +242,16 @@
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
-		9A6B480724E81021008FF12A /* Home Music */ = {
+		9A6B480724E81021008FF12A /* Search Album */ = {
 			isa = PBXGroup;
 			children = (
+				9A991DB424F1DD800026B083 /* Constant */,
 				9A6B481F24E8A0D6008FF12A /* Cell */,
 				9A6B482224E8A12B008FF12A /* Model */,
 				9A6B482024E8A0F9008FF12A /* View */,
 				9A6B482124E8A10C008FF12A /* VIewModel */,
 			);
-			path = "Home Music";
+			path = "Search Album";
 			sourceTree = "<group>";
 		};
 		9A6B480824E81047008FF12A /* Storyborad */ = {
@@ -313,6 +316,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9A991DB424F1DD800026B083 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				9A991DB524F1DDB90026B083 /* SearchAlbumConstants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,6 +334,7 @@
 				9A6B47C824E80F41008FF12A /* Sources */,
 				9A6B47C924E80F41008FF12A /* Frameworks */,
 				9A6B47CA24E80F41008FF12A /* Resources */,
+				9A991DB124F088D50026B083 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -330,7 +342,7 @@
 			);
 			name = WiproTest;
 			productName = WiproTest;
-			productReference = 9A6B47CC24E80F41008FF12A /* WiproTest.app */;
+			productReference = 9A6B47CC24E80F41008FF12A /* Album Search.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9A6B47E124E80F4B008FF12A /* WiproTestTests */ = {
@@ -440,6 +452,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A991DB124F088D50026B083 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A6B47C824E80F41008FF12A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -461,6 +494,7 @@
 				9A6B481724E850CF008FF12A /* CacheMemoryImageView.swift in Sources */,
 				9A52B72424E9B48400286168 /* HomeViewController+CollectionView.swift in Sources */,
 				9A6B480324E80FDD008FF12A /* Alert.swift in Sources */,
+				9A991DB624F1DDB90026B083 /* SearchAlbumConstants.swift in Sources */,
 				9A6B47D224E80F41008FF12A /* SceneDelegate.swift in Sources */,
 				9A6B481124E82180008FF12A /* AppServerClient.swift in Sources */,
 			);
@@ -641,12 +675,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KK654UCVNQ;
 				INFOPLIST_FILE = WiproTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.softwarechefs.WiproTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Album Search";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -659,12 +694,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KK654UCVNQ;
 				INFOPLIST_FILE = WiproTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.softwarechefs.WiproTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Album Search";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

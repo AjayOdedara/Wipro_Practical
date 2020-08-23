@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // MARK: - Music
 struct MusicData: Codable {
     let results: MusicResults

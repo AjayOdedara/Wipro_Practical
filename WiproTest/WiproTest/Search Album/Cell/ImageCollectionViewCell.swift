@@ -8,39 +8,31 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell{
+class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: CacheMemoryImageView!
     @IBOutlet weak var albumTitle: UILabel!
-    
-    var photo: Album? = nil
-    
+    var photo: Album?
     /**
-       Use to present the data of cell with Album object type.
-     
+      * Use to present the data of cell with Album object type.
        - Parameter data: Album data
      */
-       
-    func initWith(_ data: Album?){
+    func initWith(_ data: Album?) {
         photo = data
         guard let photo = photo,
             let photoUrlString = photo.image.filter({$0.size == .large}).first?.text ,
-            let thumbnailURL = URL(string:  photoUrlString) else {
+            let thumbnailURL = URL(string: photoUrlString) else {
             return
         }
         self.albumTitle.text = data?.name
         self.imageView.loadImage(atURL: thumbnailURL)
     }
-    
     override func prepareForReuse() {
         self.albumTitle.text = ""
         self.imageView.image = nil
     }
-    
-    /**
-     Reduce the priority of the cell image which is not visible
-    */
-    func reducePriorityOfDownloadtaskForCell(){
-        guard let photo = photo,  let thumbnailURL = URL(string: photo.image.first?.text ?? "") else {
+    // Reduce the priority of the cell image which is not visible
+    func reducePriorityOfDownloadtaskForCell() {
+        guard let photo = photo, let thumbnailURL = URL(string: photo.image.first?.text ?? "") else {
             return
         }
         AppServerClient.sharedInstance.reducePriorityOfTask(withURL: thumbnailURL)

@@ -18,7 +18,6 @@ struct SingleButtonAlert {
     let action: AlertAction
 }
 
-
 protocol SingleButtonDialogPresenter {
     func presentSingleButtonDialog(alert: SingleButtonAlert)
 }

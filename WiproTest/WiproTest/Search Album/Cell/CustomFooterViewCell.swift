@@ -7,6 +7,6 @@
 //
 
 import UIKit
-class CustomFooterView: UICollectionReusableView{
+class CustomFooterView: UICollectionReusableView {
     @IBOutlet weak var loader: UIActivityIndicatorView!
 }

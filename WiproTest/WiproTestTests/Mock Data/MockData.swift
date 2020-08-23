@@ -9,7 +9,6 @@
 import Foundation
 
 struct MockData {
-    static let testSearchQuery = "Just In"
-    
+    static let testSearchQuery = "JustIn"
     static let testImageURL = "https://lastfm.freetls.fastly.net/i/u/174s/15dd0660f6f0f8e3d41ce2da10813570.png"
 }

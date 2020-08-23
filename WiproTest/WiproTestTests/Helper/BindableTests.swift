@@ -6,12 +6,10 @@
 //  Copyright © 2020 Ajay Odedra. All rights reserved.
 //
 
-
 import XCTest
 @testable import WiproTest
 
 class BindableTests: XCTestCase {
-    
     func testBind() {
         let bindable = Bindable(false)
 

@@ -13,49 +13,38 @@ import XCTest
 
 class SearchAlbumHomeTests: XCTestCase {
 
-    
-    let viewModel:HomeMusicViewModel = HomeMusicViewModel()
+    let viewModel: HomeMusicViewModel = HomeMusicViewModel()
     let appServerClient = AppServerClient.sharedInstance
-    
     func testSerachAlbumQuery() {
 
         let expectHandlerCall = XCTestExpectation(description: "Album Search Response")
-        
         viewModel.currentPage = 1
         viewModel.searchText = MockData.testSearchQuery
-        guard let apiUrl = viewModel.getFormattedURl() else {
-            XCTFail()
-            return
-        }
-        
-        appServerClient.api(url: apiUrl, success: { (albums) in
+        appServerClient.api(url: viewModel.getFormattedURl(), success: { _ in
             expectHandlerCall.fulfill()
-        }) { (error) in
-            XCTFail()
-        }
-        
+        }, failure: { ( error ) in
+            let defaultMessgae = NSLocalizedString("album_search_api_failure", comment: "Default api failure message")
+            XCTFail("Failed to get response for search string, Reason:\(error?.localizedDescription ??  defaultMessgae)")
+        })
         // Wait until the expectation is fulfilled, with a timeout of 5 seconds.
         wait(for: [expectHandlerCall], timeout: 5.0)
     }
-    
-    func testServiceUrl(){
+    func testServiceUrl() {
         let expectHandlerCall = XCTestExpectation(description: "Api url")
         viewModel.searchText = MockData.testSearchQuery
-        guard let apiUrl = viewModel.getFormattedURl() else {
-            XCTFail()
+        guard let apiUrl = URL(string: viewModel.getFormattedURl()) else {
+            XCTFail("Failed to get formatted URL")
             return
         }
         expectHandlerCall.fulfill()
         print(expectHandlerCall.description, apiUrl)
     }
-    
-    func testImageDownloadTask(){
+    func testImageDownloadTask() {
         let expectHandlerCall = XCTestExpectation(description: "Image Loading response")
         let imageView = CacheMemoryImageView()
         let mockUrl = MockData.testImageURL
-        
         guard let url = URL(string: mockUrl) else {
-            XCTFail()
+            XCTFail("Failed to download the image")
             return
         }
         imageView.loadImage(atURL: url, placeHolder: true) {

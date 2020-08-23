@@ -8,71 +8,60 @@
 
 import UIKit
 
-    
-    
 class AlbumDetailViewController: UIViewController {
-    
-    
-    @IBOutlet weak var imageView: CacheMemoryImageView!
+    @IBOutlet weak var imageView: CacheMemoryImageView! {
+        didSet {
+            imageView.alpha = 0
+        }
+    }
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.startAnimating()
+        }
+    }
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    var viewModel: AlbumDetailViewModel? = nil
-    
+    var viewModel: AlbumDetailViewModel?
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
-        
         loadData()
     }
-    
-    /**
-      Use to set data of the Album.
-      It will set the image, artist and album values.
-    */
     func loadData() {
-        
-        guard let photo = viewModel?.album,
-            let photoUrlString = photo.image.filter({$0.size == .extralarge}).first?.text ,
-            let highResPhotoURL = URL(string:  photoUrlString) else {
+        guard let album = viewModel?.album else {
+            return
+        }
+        setDetailFrom(album: album)
+    }
+    /**
+     * Use to set data of the Album.
+     * It will set the image, artist and album values.
+     
+     * - Parameter album: set detail data and large Image
+    */
+    func setDetailFrom(album: Album) {
+        guard let photoUrlString = album.image.filter({$0.size == .extralarge}).first?.text,
+            let highResPhotoURL = URL(string: photoUrlString) else {
                 return
         }
-        
-        self.activityIndicator.startAnimating()
-        imageView.alpha = 0
-        
-        // Load ImageView HighResolution Image
-        if CachedMemoryManager.shared.isImageCached(for: highResPhotoURL.absoluteString){
-            imageView.loadImage(atURL: highResPhotoURL)
+        // Load imageView highResolution image
+        imageView.loadImage(atURL: highResPhotoURL, placeHolder: false, completion: {[weak self] in
             DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-            }
-        } else{
-            imageView.loadImage(atURL: highResPhotoURL)
-            activityIndicator.startAnimating()
-            imageView.loadImage(atURL: highResPhotoURL, placeHolder: false, completion: {[weak self] in
-                DispatchQueue.main.async {
-                    self?.activityIndicator.stopAnimating()
-                    
-                    UIView.animate(withDuration: 0.5) {
-                        self?.imageView.alpha = 1
-                        self?.view.layoutIfNeeded()
-                    }
+                self?.activityIndicator.stopAnimating()
+                UIView.animate(withDuration: 0.5) {
+                    self?.imageView.alpha = 1
+                    self?.view.layoutIfNeeded()
                 }
-            })
-        }
-        
-        
-        self.albumTitle.text = photo.name
-        self.artistName.text = "By: " + photo.artist
+            }
+        })
+        self.albumTitle.text = album.name
+        self.artistName.text = "By: " + album.artist
     }
-    
     // MARK: - Binding
     private func bindViewModel() {
-        
-        viewModel?.loadWithData.bindAndFire() { [weak self] isLoaded in
-            if isLoaded{
+        viewModel?.loadWithData.bindAndFire { [weak self] isLoaded in
+            if isLoaded {
                 self?.loadData()
             }
         }
@@ -83,11 +72,9 @@ class AlbumDetailViewController: UIViewController {
         artistName = nil
         imageView.image = nil
     }
-    
     @IBAction func closePresentAction(_ sender: Any) {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
 }

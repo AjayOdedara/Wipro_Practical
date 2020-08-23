@@ -7,7 +7,7 @@
 //
 
 class Bindable<T> {
-    typealias Listener = ((T) -> ())
+    typealias Listener = ((T) -> Void)
     var listener: Listener?
 
     var value: T {
@@ -16,8 +16,8 @@ class Bindable<T> {
         }
     }
 
-    init(_ v: T) {
-        self.value = v
+    init(_ val: T) {
+        self.value = val
     }
 
     func bind(_ listener: Listener?) {

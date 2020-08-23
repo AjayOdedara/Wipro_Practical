@@ -9,24 +9,17 @@
 import Foundation
 
 struct APIConstants {
-   
-    public static let lastFM_AlbumSearch = "http://ws.audioscrobbler.com/2.0/?method="
-    
-    public struct webService {
-        
-        public static let url = APIConstants.lastFM_AlbumSearch
-        
-        //MARK: Current Implementation
-        public static let album = APIConstants.webService.url +  "album.search&album="
-        
-        //MARK: Future Enhancement
-        public static let track = APIConstants.webService.url +  "track.search&track="
-        public static let artist = APIConstants.webService.url +  "artist.search&artist="
-        
+    public static let lastFMAlbumSsearch = "http://ws.audioscrobbler.com/2.0/?method="
+    public struct WebService {
+        public static let url = APIConstants.lastFMAlbumSsearch
+        // MARK: - Current Implementation
+        public static let album = APIConstants.WebService.url + "album.search&album="
+        // MARK: Future Enhancement
+        public static let track = APIConstants.WebService.url +  "track.search&track="
+        public static let artist = APIConstants.WebService.url +  "artist.search&artist="
     }
-    
-    public struct API_Keys {
-        public static let lastFM_ResponseFormat = "&format=json"
-        public static let lastFM_ApiKey = "&api_key=39120ceb7b8d9e96024552295ca1c2d9\(lastFM_ResponseFormat)"
+    public struct ApiKeys {
+        public static let lastFMResponseFormat = "&format=json"
+        public static let lastFMApiKey = "&api_key=39120ceb7b8d9e96024552295ca1c2d9\(lastFMResponseFormat)"
     }
 }

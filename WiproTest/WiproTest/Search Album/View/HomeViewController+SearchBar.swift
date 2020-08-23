@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - UISearchBarDelegate implementation
-extension HomeViewController: UISearchBarDelegate{
+extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else {
             return
@@ -20,8 +20,7 @@ extension HomeViewController: UISearchBarDelegate{
         searchController.isActive = false
         searchBar.placeholder = viewModel.searchText
     }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar){
-        searchBar.placeholder = viewModel.searchBarPlaceHolder
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.placeholder = SearchAlbumConstant.SearchView.searchPlaceHolder
     }
 }

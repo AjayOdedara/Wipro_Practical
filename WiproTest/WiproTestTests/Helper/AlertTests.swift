@@ -10,7 +10,6 @@ import XCTest
 @testable import WiproTest
 
 class AlertTests: XCTestCase {
-    
     func testAlert() {
         let expectAlertActionHandlerCall = expectation(description: "Alert action handler called")
 
