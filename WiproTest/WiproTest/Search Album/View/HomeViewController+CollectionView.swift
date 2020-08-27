@@ -10,19 +10,14 @@ import UIKit
 
 // MARK: - UICollectionViewDataSource implementation
 extension HomeViewController {
-    override func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.searchResultData.value.count
     }
-    override func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchAlbumConstant.Identifier.collectionViewCellReuseIdentifier,
-                                                      for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchAlbumConstant.Identifier.collectionViewCellReuseIdentifier, for: indexPath)
         return cell
     }
-    override func collectionView(_ collectionView: UICollectionView,
-                                 willDisplay cell: UICollectionViewCell,
-                                 forItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? ImageCollectionViewCell else {
             return
         }
@@ -40,17 +35,13 @@ extension HomeViewController {
         }
         cell.reducePriorityOfDownloadtaskForCell()
     }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.size.width, height: 55)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize.zero
     }
-    override func collectionView(_ collectionView: UICollectionView,
-                                 viewForSupplementaryElementOfKind kind: String,
-                                 at indexPath: IndexPath) -> UICollectionReusableView {
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Footer Loader View
         guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                                withReuseIdentifier: SearchAlbumConstant.Identifier.collectionViewfooterIdentifier,
@@ -64,20 +55,14 @@ extension HomeViewController {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return viewModel.countCellSizeForIndexPath()
     }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         // Return collection padding
         return SearchAlbumConstant.CollectionView.cellPadding
     }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         // Return collection padding as edges to make it even spacing from all sides
         let padding = SearchAlbumConstant.CollectionView.cellPadding
         return UIEdgeInsets(top: padding,

@@ -22,4 +22,9 @@ public struct SearchAlbumConstant {
         static let itemsPerRow = 3
         static let cellPadding: CGFloat = 5.0
     }
+    struct AlertView {
+        static let defaultMessgae = NSLocalizedString("album_search_api_failure", comment: "Default api failure message")
+        static let alertTitle = NSLocalizedString("album_search_alert_error_title", comment: "Alert title for failure")
+        static let alertOkayButtonTitle = NSLocalizedString("album_search_alert_okay_title", comment: "Alert okay button title for failure")
+    }
 }

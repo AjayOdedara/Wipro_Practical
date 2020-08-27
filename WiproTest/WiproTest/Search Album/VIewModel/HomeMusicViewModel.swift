@@ -15,8 +15,8 @@ class HomeMusicViewModel {
     var apiUrl: String {
         return getFormattedURl()
     }
-    var currentPage = 0
-    var searchText = ""
+    var currentPage: Int = 0
+    var searchText: String = ""
     // Error Presentors
     var onShowError: ((_ alert: SingleButtonAlert) -> Void)?
     let showLoadingHud: Bindable = Bindable(false)
@@ -42,12 +42,9 @@ class HomeMusicViewModel {
             self.searchResultData.value.append(contentsOf: response)
         }, failure: { ( error ) in
             // Show Alert
-            let defaultMessgae = NSLocalizedString("album_search_api_failure", comment: "Default api failure message")
-            let alertTitle = NSLocalizedString("album_search_alert_error_title", comment: "Alert title for failure")
-            let alertOkayButtonTitle = NSLocalizedString("album_search_alert_okay_title", comment: "Alert okay button title for failure")
-            let alert = SingleButtonAlert(title: alertTitle,
-                                          message: error?.localizedDescription ??  defaultMessgae,
-                                          action: AlertAction(buttonTitle: alertOkayButtonTitle, handler: {
+            let alert = SingleButtonAlert(title: SearchAlbumConstant.AlertView.alertTitle,
+                                          message: error?.localizedDescription ??  SearchAlbumConstant.AlertView.defaultMessgae,
+                                          action: AlertAction(buttonTitle: SearchAlbumConstant.AlertView.alertOkayButtonTitle, handler: {
                 print("Alert action clicked")
             }))
             self.onShowError?(alert)

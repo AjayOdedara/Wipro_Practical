@@ -9,16 +9,8 @@
 import UIKit
 
 class AlbumDetailViewController: UIViewController {
-    @IBOutlet weak var imageView: CacheMemoryImageView! {
-        didSet {
-            imageView.alpha = 0
-        }
-    }
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
-        didSet {
-            activityIndicator.startAnimating()
-        }
-    }
+    @IBOutlet weak var imageView: CacheMemoryImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var artistName: UILabel!
     var viewModel: AlbumDetailViewModel?
@@ -29,6 +21,8 @@ class AlbumDetailViewController: UIViewController {
         loadData()
     }
     func loadData() {
+        self.imageView.alpha = 0
+        self.activityIndicator.startAnimating()
         guard let album = viewModel?.album else {
             return
         }

@@ -339,8 +339,8 @@
             filePath = "WiproTest/Album Detail/View/AlbumDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "setDetailFrom(album:)"
             landmarkType = "7">
             <Locations>
@@ -375,6 +375,22 @@
                   offsetFromSymbolStart = "44">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7017AF5-FE43-425E-996D-D41A7688A2AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WiproTest/Search Album/View/HomeViewController+CollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "collectionView(_:layout:insetForSectionAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

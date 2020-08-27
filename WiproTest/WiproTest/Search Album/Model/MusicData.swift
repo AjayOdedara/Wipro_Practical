@@ -55,10 +55,10 @@ struct Image: Codable {
 }
 
 enum Size: String, Codable {
-    case extralarge = "extralarge"
-    case large = "large"
-    case medium = "medium"
-    case small = "small"
+    case extralarge
+    case large
+    case medium
+    case small
 }
 
 // MARK: - Attr
